@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="PointIndicator">
+        <attr name="pointRadius" format="dimension"/>
+        <attr name="pointSpace" format="dimension"/>
+        <attr name="pointNormalColor" format="reference|color"/>
+        <attr name="pointSelectColor" format="reference|color"/>
+    </declare-styleable>
+</resources>

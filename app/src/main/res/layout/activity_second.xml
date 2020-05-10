@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/preloadbgView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/bgView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"/>
+
+
+    <com.kuang2010.bannerview.CirCleBgView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+    <com.kuang2010.bannerview.Bannerview
+        android:id="@+id/banner_view"
+        android:layout_width="match_parent"
+        android:layout_height="134dp"
+        android:layout_marginLeft="11dp"
+        android:layout_marginRight="11dp"
+        android:layout_marginTop="100dp">
+
+
+        <com.kuang2010.bannerview.PointIndicatorView
+            android:id="@+id/pv_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            app:pointRadius = "5dp"
+            app:pointNormalColor = "#999999"
+            app:pointSelectColor = "#f00000"
+            app:pointSpace = "5dp"/>
+
+    </com.kuang2010.bannerview.Bannerview>
+
+
+</RelativeLayout>
