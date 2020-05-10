@@ -67,4 +67,7 @@ Step 2. Add the dependency
         });
 
         mBanner_view.setIndicator(pv_main);
+	
+	int screenWidth = getScreenWidth(this);
+        mBanner_view.setMarginAndAspectRatio((int)(60 / 1080f * screenWidth), (int)(24 / 1080f * screenWidth),960/492f);
   
