@@ -30,7 +30,7 @@ Step 2. Add the dependency
   
   
   
- Step 3. layout xml file
+ Step 3. partial code in layout xml file 
  
  
     <com.kuang2010.bannerview.Bannerview
@@ -50,7 +50,7 @@ Step 2. Add the dependency
         android:layout_marginTop="15dp"/>
         
         
-  Step 4. Activity file
+  Step 4. partial code in  Activity file
   
           mBanner_view.initDatasAndItem(datas,new BannerAdapter.OnSetItemViewListener() {
             @Override
