@@ -81,7 +81,7 @@ public class CirCleBgView extends View {
     //    @Override
     protected void onDraw(Canvas canvas, int f) {
         super.onDraw(canvas);
-
+//        mPaint.setShader()
         //清屏操作
         canvas.drawColor(Color.GRAY);
         //画布向右下移动50像素
