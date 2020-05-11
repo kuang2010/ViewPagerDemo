@@ -266,7 +266,7 @@ public class Bannerview extends RelativeLayout implements ViewPager.OnPageChange
                         moveFlag = 1;
                     }
                     break;
-                case MotionEvent.ACTION_UP:
+                case MotionEvent.ACTION_UP://处理最终边界结果
                     Log.d("tagtag","ACTION_UP");
                     startAutoPlay();
                     long dMills = Math.abs(System.currentTimeMillis() - mDownMillis);
