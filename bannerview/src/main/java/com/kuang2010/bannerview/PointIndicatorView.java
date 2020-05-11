@@ -80,13 +80,13 @@ public class PointIndicatorView extends View implements IIndicator{
 		int widthMode = MeasureSpec.getMode(widthMeasureSpec);
 		int heightMode = MeasureSpec.getMode(heightMeasureSpec);
 		if (widthMode == MeasureSpec.EXACTLY) {
-			mWidth = getWidth();
+			mWidth = getLayoutParams().width;
 		} else {
 			mWidth = (int)(mTotalNum * mPointRadius * 2 + (mTotalNum - 1) * mPointSpace);
 			mWidth = mWidth >= 0 ? mWidth : 0;
 		}
 		if (heightMode == MeasureSpec.EXACTLY) {
-			mHeight = getHeight();
+			mHeight = getLayoutParams().height;
 		} else {
 			mHeight = (int)(mPointRadius * 2);
 		}
