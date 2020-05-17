@@ -104,7 +104,7 @@ public class Bannerview extends RelativeLayout implements ViewPager.OnPageChange
             int realCount = mBannerAdapter.getRealCount();
             mIIndicator.setTotalNum(realCount);
             //间接调用setSelectIndex改变选中的位置
-            mViewPager.setCurrentItem(mBannerAdapter.getRealCount()*1000+currentSelect,false);
+            mViewPager.setCurrentItem(mBannerAdapter.getRealCount()*100+currentSelect,false);
         }
     }
 

@@ -1,5 +1,6 @@
 package com.kuang2010.bannerview;
 
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -53,6 +54,7 @@ public class BannerAdapter<E> extends PagerAdapter {
         //      1.初始化显示View
         //      2.默认缓存3个View  当前 前一个 后一个
         if (mOnInstantiateItemListener==null) return null;
+        Log.d("tagtag","instantiateItem:"+position);
         position = position % mDatas.size();
         View view = mOnInstantiateItemListener.instantiateItem(position,mDatas.get(position));//// 初始化view
         container.addView(view);// 添加View到ViewPager中
@@ -64,6 +66,7 @@ public class BannerAdapter<E> extends PagerAdapter {
     public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
 //        super.destroyItem(container, position, object);
         //  不是缓存位置的view要销毁 不要使用默认的super.destroyItem(container, position, object);UnsupportedOperationException
+        Log.d("tagtag","destroyItem:"+position);
         container.removeView((View) object);
 
     }
