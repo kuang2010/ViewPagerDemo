@@ -14,6 +14,8 @@ public class BannerAdapter<E> extends PagerAdapter {
 
     private List<E> mDatas = new ArrayList<>();
     private OnSetItemViewListener mOnInstantiateItemListener;
+    private int mPreNotifyCount;
+
 
     public void initDatasAndItemViewListener(List<E> datas, OnSetItemViewListener onSetItemViewListener){
         mOnInstantiateItemListener = onSetItemViewListener;
@@ -70,6 +72,29 @@ public class BannerAdapter<E> extends PagerAdapter {
         container.removeView((View) object);
 
     }
+
+
+    //重写getItemPosition解决数据源变化时，由于viewpage的缓存导致notifyDataSetChanged部分item不刷新的问题
+    @Override
+    public int getItemPosition(@NonNull Object object) {
+//        View view = (View) object;
+//        int pos = (int) view.getTag();
+//        if (pos >= mPreNotifyCount) {
+        if (mPreNotifyCount>0) {
+
+            mPreNotifyCount--;
+
+            return POSITION_NONE;//数据源变化时instantiateItem会强制重新加载item
+        }
+        return POSITION_UNCHANGED;//数据源变化时instantiateItem不会重新加载item
+    }
+
+    @Override
+    public void notifyDataSetChanged() {
+        mPreNotifyCount = getCount();
+        super.notifyDataSetChanged();
+    }
+
 
     public interface OnSetItemViewListener<E>{
         View instantiateItem(int position, E data);
